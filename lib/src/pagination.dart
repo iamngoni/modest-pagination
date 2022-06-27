@@ -15,6 +15,7 @@ class ModestPagination<T> extends StatefulWidget {
     this.inactiveIndexColor = const Color(0xFF00595F),
     this.activeTextSize = 16,
     this.inactiveTextSize = 16,
+    required this.scrollView,
   }) : super(key: key);
 
   final List<T> items;
@@ -28,6 +29,7 @@ class ModestPagination<T> extends StatefulWidget {
   final Color inactiveIndexColor;
   final double activeTextSize;
   final double inactiveTextSize;
+  final BoxScrollView scrollView;
 
   @override
   State<ModestPagination<T>> createState() => _ModestPaginationState<T>();
@@ -64,6 +66,13 @@ class _ModestPaginationState<T> extends State<ModestPagination<T>> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Expanded(
+              child: PageView(
+                children: currentItems.map((List<T> i) {
+                  return widget.scrollView;
+                }).toList(),
+              ),
+            ),
             Container(
               width: context.width,
               alignment: Alignment.center,
