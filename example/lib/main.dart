@@ -308,12 +308,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           child: ModestPagination(
             items: countries,
-            innerPaginationCount: 8,
-            outerPaginationCount: 6,
-            activeIndexColor: Colors.white,
-            inactiveIndexColor: Colors.white70,
-            innerIconsColor: Colors.white,
-            outerIconsColor: Colors.white,
+            itemsPerPage: 8,
+            pagesPerSheet: 6,
+            activeTextColor: Colors.white,
+            inactiveTextColor: Colors.white70,
+            pagesControllerIconsColor: Colors.white,
+            sheetsControllerIconsColor: Colors.white,
             useListView: true,
             childWidget: (element) {
               return Container(
