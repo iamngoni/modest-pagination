@@ -185,7 +185,9 @@ class _ModestPaginationState<T> extends State<ModestPagination<T>> {
                     firstChild: InkWell(
                       onTap: () {
                         setState(() {
-                          index != 0 ? index-- : 0;
+                          if (index != 0) {
+                            index--;
+                          }
                         });
                         innerPageController.jumpToPage(index);
                       },

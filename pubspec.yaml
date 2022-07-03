@@ -1,6 +1,6 @@
 name: modest_pagination
 description: Attempt at modularizing my own pagination. It is a simple to use pagination component (that most suites my needs and may fit into your needs too)
-version: 0.0.1
+version: 0.0.1+1
 homepage: https://github.com/iamngoni/modest-pagination
 
 environment:
@@ -17,5 +17,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  lints: ^2.0.0
+
 
 flutter:
