@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:handy_extensions/handy_extensions.dart';
+import 'package:modest_pagination/src/type_defs.dart';
 
 class ModestPagination<T> extends StatefulWidget {
   const ModestPagination({
-    Key? key,
+    super.key,
     required this.items,
+    required this.childWidget,
     this.innerPaginationCount = 8,
     this.outerPaginationCount = 10,
     this.innerIconsColor = const Color(0xFF00595F),
@@ -15,10 +17,12 @@ class ModestPagination<T> extends StatefulWidget {
     this.inactiveIndexColor = const Color(0xFF00595F),
     this.activeTextSize = 16,
     this.inactiveTextSize = 16,
-    required this.scrollView,
-  }) : super(key: key);
+    this.useListView = true,
+    this.gridViewCrossAxisCount = 2,
+  });
 
   final List<T> items;
+  final ChildWidget childWidget;
   final int innerPaginationCount;
   final int outerPaginationCount;
   final Color innerIconsColor;
@@ -29,7 +33,8 @@ class ModestPagination<T> extends StatefulWidget {
   final Color inactiveIndexColor;
   final double activeTextSize;
   final double inactiveTextSize;
-  final BoxScrollView scrollView;
+  final bool useListView;
+  final int gridViewCrossAxisCount;
 
   @override
   State<ModestPagination<T>> createState() => _ModestPaginationState<T>();
@@ -68,8 +73,17 @@ class _ModestPaginationState<T> extends State<ModestPagination<T>> {
           children: [
             Expanded(
               child: PageView(
+                controller: innerPageController,
                 children: currentItems.map((List<T> i) {
-                  return widget.scrollView;
+                  return widget.useListView
+                      ? ListView(
+                          children: i.map((T element) {
+                            return widget.childWidget(element: element);
+                          }).toList(),
+                        )
+                      : GridView.count(
+                          crossAxisCount: widget.gridViewCrossAxisCount,
+                        );
                 }).toList(),
               ),
             ),
