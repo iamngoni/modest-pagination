@@ -25,7 +25,23 @@ flutter pub add modest_pagination
 
 ### Usage
 
-Check example
+```dart
+ModestPagination(
+  items: countries,
+  itemsPerPage: 8,
+  pagesPerSheet: 6,
+  activeTextColor: Colors.white,
+  inactiveTextColor: Colors.white70,
+  pagesControllerIconsColor: Colors.white,
+  sheetsControllerIconsColor: Colors.white,
+  useListView: true,
+  childWidget: (T element) {
+    return Container();
+    },
+)
+```
+
+Check example for more details
 
 ## Screenshot
 <table>
