@@ -1,39 +1,40 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# [ModestPagination](https://pub.dev/packages/modest_pagination/)
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+<img src="https://img.shields.io/pub/v/modest_pagination?style=for-the-badge">
+<img src="https://img.shields.io/github/last-commit/iamngoni/modest-pagination">
+<img src="https://img.shields.io/twitter/url?label=iamngoni_&style=social&url=https%3A%2F%2Ftwitter.com%2Fiamngoni_">
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+This is a simple to use pagination component (that most suites my needs and may fit into your needs too)
 
 ## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
+### Add dependency
+```yaml
+dependencies:
+  modest_pagination: <version>
 ```
 
-## Additional information
+### Or
+```shell
+flutter pub add modest_pagination
+```
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+### Import package
+```dart
+  import 'package:modest_pagination/modest_pagination.dart';
+```
+
+### Usage
+
+Check example
+
+## Screenshot
+<table>
+   <tr>
+      <td> Default</td>
+      <td> Using The Override Option</td>
+   </tr>
+   <tr>
+      <td><img src="https://res.cloudinary.com/iamngoni/image/upload/v1641903927/default_bivxyk.png"/></td>
+      <td><img src="https://res.cloudinary.com/iamngoni/image/upload/v1641903839/override_eh09yg.png"/></td>
+   </tr>
+</table>

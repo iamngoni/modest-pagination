@@ -16,7 +16,7 @@ class ModestPagination<T> extends StatefulWidget {
   /// the widget to be displayed for each item in the list [items]. E.g. if your
   /// list of items is List<int> then your function has to take an integer as the
   /// parameter type -> [Widget Function(int element)]
-  final ChildWidget childWidget;
+  final Widget Function(T element) childWidget;
 
   /// Number of items for be listed on each page on either the [GridView] or the
   /// [ListView]

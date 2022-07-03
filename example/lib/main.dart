@@ -315,7 +315,7 @@ class _MyHomePageState extends State<MyHomePage> {
             pagesControllerIconsColor: Colors.white,
             sheetsControllerIconsColor: Colors.white,
             useListView: true,
-            childWidget: (element) {
+            childWidget: (Map<String, dynamic> element) {
               return Container(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 10,
