@@ -46,11 +46,11 @@ Check example for more details
 ## Screenshot
 <table>
    <tr>
-      <td> Default</td>
-      <td> Using The Override Option</td>
+      <td>GridView</td>
+      <td>ListView</td>
    </tr>
    <tr>
-      <td><img src="https://res.cloudinary.com/iamngoni/image/upload/v1641903927/default_bivxyk.png"/></td>
-      <td><img src="https://res.cloudinary.com/iamngoni/image/upload/v1641903839/override_eh09yg.png"/></td>
+      <td><img src="https://res.cloudinary.com/iamngoni/image/upload/v1656880214/Screenshot_1656876797_vunths.png"/></td>
+      <td><img src="https://res.cloudinary.com/iamngoni/image/upload/v1656880454/Screenshot_1656880434_yw5dhq.png"/></td>
    </tr>
 </table>
