@@ -314,6 +314,7 @@ class _MyHomePageState extends State<MyHomePage> {
             inactiveIndexColor: Colors.white70,
             innerIconsColor: Colors.white,
             outerIconsColor: Colors.white,
+            useListView: true,
             childWidget: (element) {
               return Container(
                 padding: const EdgeInsets.symmetric(

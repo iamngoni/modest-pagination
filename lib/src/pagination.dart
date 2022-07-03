@@ -5,20 +5,23 @@ import 'package:modest_pagination/src/type_defs.dart';
 class ModestPagination<T> extends StatefulWidget {
   const ModestPagination({
     super.key,
-    required this.items,
-    required this.childWidget,
-    this.innerPaginationCount = 8,
-    this.outerPaginationCount = 10,
     this.innerIconsColor = const Color(0xFF00595F),
     this.outerIconsColor = const Color(0xFF00595F),
-    this.innerIconsSize = 24,
-    this.outerIconsSize = 24,
     this.activeIndexColor = const Color(0xFF00595F),
     this.inactiveIndexColor = const Color(0xFF00595F),
+    this.useListView = true,
+    this.innerPaginationCount = 8,
+    this.outerPaginationCount = 10,
+    this.innerIconsSize = 24,
+    this.outerIconsSize = 24,
     this.activeTextSize = 16,
     this.inactiveTextSize = 16,
-    this.useListView = true,
     this.gridViewCrossAxisCount = 2,
+    this.gridViewCrossAxisSpacing = 10,
+    this.gridViewMainAxisSpacing = 10,
+    this.gridViewChildAspectRatio = 1,
+    required this.items,
+    required this.childWidget,
   });
 
   final List<T> items;
@@ -35,6 +38,9 @@ class ModestPagination<T> extends StatefulWidget {
   final double inactiveTextSize;
   final bool useListView;
   final int gridViewCrossAxisCount;
+  final double gridViewCrossAxisSpacing;
+  final double gridViewMainAxisSpacing;
+  final double gridViewChildAspectRatio;
 
   @override
   State<ModestPagination<T>> createState() => _ModestPaginationState<T>();
@@ -83,6 +89,12 @@ class _ModestPaginationState<T> extends State<ModestPagination<T>> {
                         )
                       : GridView.count(
                           crossAxisCount: widget.gridViewCrossAxisCount,
+                          crossAxisSpacing: widget.gridViewCrossAxisSpacing,
+                          mainAxisSpacing: widget.gridViewMainAxisSpacing,
+                          childAspectRatio: widget.gridViewChildAspectRatio,
+                          children: i.map((T element) {
+                            return widget.childWidget(element);
+                          }).toList(),
                         );
                 }).toList(),
               ),
