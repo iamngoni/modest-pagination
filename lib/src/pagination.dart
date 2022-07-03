@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:handy_extensions/handy_extensions.dart';
-import 'package:modest_pagination/src/type_defs.dart';
 
 class ModestPagination<T> extends StatefulWidget {
   /// ModestPagination
@@ -12,10 +11,9 @@ class ModestPagination<T> extends StatefulWidget {
   /// e.g. paginating a list of countries
   final List<T> items;
 
-  /// [ChildWidget] is a [Widget Function(dynamic element)] function that returns
-  /// the widget to be displayed for each item in the list [items]. E.g. if your
-  /// list of items is List<int> then your function has to take an integer as the
-  /// parameter type -> [Widget Function(int element)]
+  /// A function that returns the widget to be displayed for each item in the
+  /// list [items]. E.g. if your list of items is List<int> then your function
+  /// has to take an integer as the parameter type -> [Widget Function(int element)]
   final Widget Function(T element) childWidget;
 
   /// Number of items for be listed on each page on either the [GridView] or the
