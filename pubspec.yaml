@@ -1,5 +1,5 @@
 name: modest_pagination
-description: Attempt at modularizing my own pagination
+description: Attempt at modularizing my own pagination. It is a simple to use pagination component (that most suites my needs and may fit into your needs too)
 version: 0.0.1
 homepage: https://github.com/iamngoni/modest-pagination
 
