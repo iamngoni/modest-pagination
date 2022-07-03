@@ -78,7 +78,7 @@ class _ModestPaginationState<T> extends State<ModestPagination<T>> {
                   return widget.useListView
                       ? ListView(
                           children: i.map((T element) {
-                            return widget.childWidget(element: element);
+                            return widget.childWidget(element);
                           }).toList(),
                         )
                       : GridView.count(

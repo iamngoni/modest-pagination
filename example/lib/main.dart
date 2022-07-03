@@ -288,10 +288,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           height: MediaQuery.of(context).size.height * 0.6,
           margin: const EdgeInsets.symmetric(
-            horizontal: 50,
+            horizontal: 30,
           ),
           padding: const EdgeInsets.symmetric(
             horizontal: 10,
+            vertical: 5,
           ),
           decoration: BoxDecoration(
             color: Colors.blue,
@@ -307,12 +308,56 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           child: ModestPagination(
             items: countries,
-            innerPaginationCount: 30,
+            innerPaginationCount: 8,
             outerPaginationCount: 6,
             activeIndexColor: Colors.white,
             inactiveIndexColor: Colors.white70,
             innerIconsColor: Colors.white,
             outerIconsColor: Colors.white,
+            childWidget: (element) {
+              return Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 5,
+                ),
+                margin: const EdgeInsets.symmetric(
+                  vertical: 5,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.white.withOpacity(0.9),
+                      blurRadius: 1,
+                      spreadRadius: 0.2,
+                      offset: const Offset(0.5, 0.5),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "${element["name"]}",
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      "CODE: ${element["code"]}",
+                      style: const TextStyle(
+                        color: Colors.black54,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
         ),
       ),
